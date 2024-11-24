@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.common-class {
+    @apply w-full mb-4;
+  }
+
+.label-err-css{
+    @apply flex justify-between;
+}  

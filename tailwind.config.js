@@ -28,6 +28,9 @@ module.exports = {
         "sidebar-desktop": "url('./assets/images/bg-sidebar-mobile.svg')", // Corrected path with '/'
         "sidebar-mobile":  "url('./assets//images//bg-sidebar-mobile.svg')",  // Corrected path with '/'
       },
+      screens: {
+        'max-xs': { min: '376px' }, 
+      },
     },
   },
   plugins: [],
