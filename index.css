@@ -9,3 +9,7 @@
 .label-err-css{
     @apply flex justify-between;
 }  
+
+.card{
+    @apply bg-white w-80 h-fit rounded-xl p-4 absolute top-24;
+}

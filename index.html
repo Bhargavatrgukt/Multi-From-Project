@@ -22,30 +22,30 @@
     <main class="w-full max-xs:hidden">
       <div class="w-full bg-sidebar-mobile h-40 p-6 relative">
           <div class="flex  flex-row justify-center">
-            <div class="w-8 h-8 p-3 bg-light-blue rounded-full m-4 text-center flex justify-center items-center">1</div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white">
+            <div class="w-8 h-8 p-3 bg-light-blue rounded-full m-4 text-center flex justify-center items-center" id="step-1-indicator">1</div>
+            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-2-indicator">
               2
             </div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white">
+            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-3-indicator">
               3
             </div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white">
+            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-4-indicator">
               4
             </div>
           </div>
        </div>
        <div class="bg-magnolia h-screen flex justify-center p-3">
-          <div class=" bg-white w-80 h-fit rounded-xl p-4 absolute top-24">
+          <div class="card" id="step-1">
               <h1 class="font-bold text-xl p-2">Personal Info</h1>
-              <p class="light-gray font-light p-2">Please provide your name, email address , and phone number</p>
+              <p class="text-cool-gray  p-2">Please provide your name, email address , and phone number</p>
               <div>
                 <!-- First Input Field -->
                 <div class="common-class">
                   <div class="label-err-css">  
                     <label for="name" class="block">Name</label>
-                    <p id="name-error-msg" class="text-red-500 hidden">This Field is required</p>
+                    <p id="name-error-msg" class="text-red-500 hidden" >This Field is required</p>
                   </div>
-                  <input type="text" placeholder="e.g. Stephen King" class="p-2 border-2 border-light-gray block w-full">
+                  <input type="text" placeholder="e.g. Stephen King" class="p-2 border-2 border-light-gray block w-full" id="name">
                 </div>
               
                 <!-- Second Input Field -->
@@ -54,7 +54,7 @@
                     <label for="email" class="block">Email Address</label>
                     <p id="email-error-msg" class="text-red-500 hidden">This Field is required</p>
                   </div>
-                  <input type="email" placeholder="e.g. stephenking@lorem.com" class="p-2 border-2 border-light-gray block w-full">
+                  <input type="email" placeholder="e.g. stephenking@lorem.com" class="p-2 border-2 border-light-gray block w-full" id="email">
                 </div>
               
                 <!-- Third Input Field -->
@@ -63,20 +63,79 @@
                     <label for="phone" class="block">Phone Number</label>
                     <p id="phone-error-msg" class="text-red-500 hidden">This Field is required</p>
                   </div>
-                  <input type="tel" placeholder="e.g. +1 234 567 890" class="p-2 border-2 border-light-gray block w-full">
+                  <input type="tel" placeholder="e.g. +1 234 567 890" class="p-2 border-2 border-light-gray block w-full" id="phone">
                 </div>
 
               </div>
               
           </div>
+          <div class="card hidden" id="step-2">
+            <h1 class="font-bold text-xl p-2">Select your plan</h1>
+            <p class="text-cool-gray font-light p-2">You have the option of monthly or yearly billing</p>
+             <div class="m-1">
+                <div class="p-3 w-full flex border-2 rounded-lg mb-2">
+                   <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
+                   <div class="pl-3">
+                     <h2 class="text-marine-blue  font-semibold">Arcade</h2>
+                     <p class="text-cool-gray">$9/mo</p>
+                   </div>
+                </div>
+                <div class="p-3 w-full flex border-2 rounded-lg mb-2">
+                  <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
+                  <div class="pl-3">
+                    <h2 class="text-marine-blue  font-semibold">Advanced</h2>
+                    <p class="text-cool-gray">$12/mo</p>
+                  </div>
+               </div>
+               <div class="p-3 w-full flex border-2 rounded-lg mb-2">
+                <img src="./assets/images/icon-pro.svg" alt="icon-pro">
+                <div class="pl-3">
+                  <h2 class="text-marine-blue  font-semibold">Pro</h2>
+                  <p class="text-cool-gray">$14/mo</p>
+                </div>
+             </div>
+             </div>
+             <div class="flex justify-center w-full bg-magnolia p-4 mt-4 rounded-lg">
+              <!-- Monthly Label -->
+              <p class="text-md font-medium pr-4 text-marine-blue font-semibold">Monthly</p>
+            
+              <!-- Checkbox Slider -->
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" class="sr-only peer">
+                <div class="w-10 h-5 bg-gray-200  rounded-full peer dark:bg-gray-700"></div>
+                <div class="absolute w-4 h-4 bg-white border border-gray-300 rounded-full transition-transform peer-checked:translate-x-6"></div>
+              </label>
+            
+              <!-- Yearly Label -->
+              <p class="text-mdfont-medium pl-4">Yearly</p>
+            </div>
+            
+          </div>
+         <div class="card hidden" id="step-3">
+          <h1 class="font-bold text-xl p-2">Pick add-ons</h1>
+          <p class="text-cool-gray font-light p-2">Add-ons helps enhance gaming experience</p>
+          <div class="m-1">
+             <div class="flex w-full p-4 border-2 rounded-lg">
+                <input type="checkbox"/>
+                <div>
+                   <h3 class="">Online services</h3>
+                   <p class="text-light-gray">Access to multiplayer games</p>
+                </div>
+             </div>
+          </div>
+         </div>
+
+          <!-- this is button code -->
           <div class="fixed bottom-0 w-full bg-white p-4">
             <div class="flex justify-end">
-              <button class="bg-marine-blue text-white p-2 rounded-md">Next Step</button>
+              <button id="go-back-btn" class="bg-light-gray text-black p-2 rounded-md hidden">Go Back</button>
+              <button class="bg-marine-blue text-white p-2 rounded-md" id="next-step-btn">Next Step</button>
             </div>
           </div>
           
       </div>
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>
 
