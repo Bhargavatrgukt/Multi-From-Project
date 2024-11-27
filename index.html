@@ -36,8 +36,8 @@
               4
             </div>
           </div>
-       </div>
-       <div class="bg-magnolia h-screen flex justify-center p-3">
+      </div>
+      <div class="bg-magnolia h-screen flex justify-center p-3">
           <div class="card" id="step-1">
               <h1 class="font-bold text-xl p-2">Personal Info</h1>
               <p class="text-cool-gray  p-2">Please provide your name, email address , and phone number</p>
@@ -81,7 +81,8 @@
                 <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
                 <div class="pl-3">
                   <h2 class="text-marine-blue font-semibold">Arcade</h2>
-                  <p class="text-cool-gray">$9/mo</p>
+                  <p class="price text-cool-gray">$9/mo</p>
+                  <p class="offer hidden text-marine-blue">2 months free</p>
                 </div>
               </div>
               <!-- Advanced Plan -->
@@ -89,7 +90,8 @@
                 <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
                 <div class="pl-3">
                   <h2 class="text-marine-blue font-semibold">Advanced</h2>
-                  <p class="text-cool-gray">$12/mo</p>
+                  <p class="price text-cool-gray">$12/mo</p>
+                  <p class="offer hidden text-marine-blue">2 months free</p>
                 </div>
               </div>
               <!-- Pro Plan -->
@@ -97,7 +99,8 @@
                 <img src="./assets/images/icon-pro.svg" alt="icon-pro">
                 <div class="pl-3">
                   <h2 class="text-marine-blue font-semibold">Pro</h2>
-                  <p class="text-cool-gray">$14/mo</p>
+                  <p class="price text-cool-gray">$14/mo</p>
+                  <p class="offer hidden text-marine-blue">2 months free</p>
                 </div>
               </div>
             </div>
@@ -120,9 +123,9 @@
           <p class="text-cool-gray font-light p-2">Add-ons helps enhance gaming experience</p>
           <div class="mt-1 mb-3">
              <div class="flex w-full p-3 border-2 rounded-lg justify-between">
-                <input type="checkbox" class="bg-marine-blue text-white mr-3"/>
+                <input type="checkbox" class="bg-marine-blue text-white mr-3" checked/>
                 <div>
-                   <h3 class="text-sm font-bold text-marine-blue">Online services</h3>
+                   <h3 class="text-sm font-bold text-marine-blue">Online Services</h3>
                    <p class="text-gray-400 text-xs">Access to multiplayer games</p>
                 </div>
                 <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="1" data-price-yearly="10">+$1/mo</p>
@@ -130,7 +133,7 @@
           </div>
           <div class="mt-1 mb-3">
             <div class="flex w-full p-3 border-2 rounded-lg justify-between">
-               <input type="checkbox" class="bg-marine-blue text-white mr-3"/>
+               <input type="checkbox" class="bg-marine-blue text-white mr-3" checked/>
                <div>
                   <h3 class="text-sm font-bold text-marine-blue">Larger Storage</h3>
                   <p class="text-gray-400 text-xs">Extra 1TB of cloud save</p>
@@ -149,26 +152,48 @@
           </div>
          </div>
           
-      </div>
-        
-      <div class="card hidden flex flex-col items-center" id="thankYou-card">
+         </div>
+         
+         <div class="card hidden" id="step-4">
+          <h1 class="font-bold text-2xl p-2">Finishing Up</h1>
+          <p class="text-cool-gray font-light p-2">Double-check everything looks OK before confirming</p>
+          <div class="bg-magnolia p-5" id="summary">
+              <div class="flex justify-between pt-3 pb-3">
+                  <div>
+                    <h2 class="text-marine-blue text-sm" id="plan-name">Arcade(monthly)</h2>
+                    <a href="#" class="text-cool-gray block underline" id="change-plan">change</a>
+                  </div>
+                  <p id="plan-price">$9/mo</p>
+              </div>
+              <hr class="bg-light-gray  w-full">
+          </div>
+            <div class="flex flex-row justify-between  p-3 ml-3">
+               <h2 class="text-base text-cool-gray" id="total">Total(per monthly)</h2>
+               <h2 class="text-marine-blue text-lg font-bold" id="total-cal">$</h2>
+            </div>
+         </div>
+      
+          
+          <div class="card hidden flex flex-col items-center" id="thank-you-card">
 
-         <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" class="mt-2 mb-6">
-         <h1 class="text-marine-blue font-bold text-xl mb-4">Thank You!</h1>
-         <p class="text-center text-cool-gray font-semibold">
-           Thanks for confirming your subscription! 
-            We hope you have fun using our platform. If you ever need support, 
-            please feel free to email us at support@loremgaming.com.
-         </p>
-      </div>
+            <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" class="mt-2 mb-6">
+            <h1 class="text-marine-blue font-bold text-xl mb-4">Thank You!</h1>
+            <p class="text-center text-cool-gray font-semibold">
+              Thanks for confirming your subscription! 
+                We hope you have fun using our platform. If you ever need support, 
+                please feel free to email us at support@loremgaming.com.
+            </p>
+          </div>
+      </div>  
         <!-- this is button code -->
-        <div class="fixed bottom-0 w-full bg-white p-4">
+        <div class="fixed bottom-0 w-full bg-white p-4" id="footer">
           <div class="flex justify-end">
             <button id="go-back-btn" class="bg-light-gray text-black p-2 rounded-md hidden">Go Back</button>
             <button class="bg-marine-blue text-white p-2 rounded-md" id="next-step-btn">Next Step</button>
           </div>
         </div>
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>
 
