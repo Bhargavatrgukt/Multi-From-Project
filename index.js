@@ -7,6 +7,7 @@ let stepThree=document.getElementById('step-3');
 let stepFour=document.getElementById('step-4');
 let thankYouCard=document.getElementById("thank-you-card");
 let footer=document.getElementById("footer");
+let footerContent=document.getElementById("footer-content");
 let ulElement=document.getElementById("summary")
 
 const billingToggle = document.querySelector('#billing-toggle'); // Billing type toggle
@@ -53,6 +54,8 @@ let planPrice=document.getElementById("plan-price");
 let total=document.getElementById("total");
 let totalCal=document.getElementById("total-cal")
 
+
+
 function summation() {
 
     planName.textContent = `${selectedPlan.plan} (${selectedPlan.billing})`;
@@ -88,14 +91,23 @@ function summation() {
     event.preventDefault(); 
     stepFour.classList.add("hidden");
     stepTwo.classList.remove("hidden");
+
+
+    // Update the step indicators for step-2 and step-4
+    stepsIndicator[3].classList.remove('bg-light-blue'); // step-4 indicator
+    stepsIndicator[3].classList.add('text-white', 'border', 'border-white'); // Reset step-4 indicator
+
+    stepsIndicator[1].classList.remove('text-white', 'border', 'border-white', 'bg-transparent'); // step-2 indicator
+    stepsIndicator[1].classList.add('bg-light-blue'); // Activate step-2 indicator
+
+    // Update the "Next Step" button for step-2
+    nextStepBtn.classList.add('bg-marine-blue');
+    nextStepBtn.classList.remove('bg-purplish-blue');
+    nextStepBtn.textContent = "Next Step";
 });
 
 
 }
-
-
-
-
 
 
 
@@ -258,55 +270,102 @@ function verifyRequiredFields(currentStep, currentStepIndex) {
     return true;
 }
 
+
+
+// Add event listener for the Next Step button
 nextStepBtn.addEventListener('click', () => {
-    let currentStepIndex = steps.findIndex(step => !step.classList.contains("hidden"));
-    let currentStep = steps[currentStepIndex];
-    if (currentStepIndex<(steps.length)-1){
+    const currentStepIndex = steps.findIndex(step => !step.classList.contains("hidden"));
+    const currentStep = steps[currentStepIndex];
+    const isLastStep = currentStepIndex === steps.length - 1;
+
+    if (!isLastStep) {
+        // Check if all required fields in the current step are valid
         if (verifyRequiredFields(currentStep, currentStepIndex)) {
+            // Hide current step and update the step indicator
             currentStep.classList.add('hidden');
             stepsIndicator[currentStepIndex].classList.remove('bg-light-blue');
             stepsIndicator[currentStepIndex].classList.add('text-white', 'border', 'border-white');
 
-            if (currentStepIndex + 1 < steps.length) {
-                steps[currentStepIndex + 1].classList.remove('hidden');
-                stepsIndicator[currentStepIndex + 1].classList.remove('text-white', 'border', 'border-white', "bg-transparent");
-                stepsIndicator[currentStepIndex + 1].classList.add('bg-light-blue');
+            // Show the next step and update the step indicator
+            const nextStepIndex = currentStepIndex + 1;
+            steps[nextStepIndex].classList.remove('hidden');
+            stepsIndicator[nextStepIndex].classList.remove('text-white', 'border', 'border-white', 'bg-transparent');
+            stepsIndicator[nextStepIndex].classList.add('bg-light-blue');
+
+            // Handle the visibility of the Go Back button
+            if (nextStepIndex > 0) {
                 goBackBtn.classList.remove('hidden');
-                goBackBtn.classList.add('ml-auto');
             }
 
-            if(currentStepIndex+1===3){
-               nextStepBtn.classList.remove("bg-marine-blue");
-               nextStepBtn.classList.add('bg-purplish-blue');
-               nextStepBtn.textContent="Confirm";
-            }else{
-               nextStepBtn.classList.add("bg-marine-blue");
-               nextStepBtn.classList.remove('bg-purplish-blue');
-               nextStepBtn.textContent="Next Step";
+              // Update footer layout
+            if (currentStepIndex+1 === 0) {
+                // Step-1: Align "Next Step" button to the right
+                footerContent.classList.add('justify-end');
+                footerContent.classList.remove('justify-between');
+            } else {
+                // Other Steps: Use justify-between
+                footerContent.classList.remove('justify-end');
+                footerContent.classList.add('justify-between');
             }
-        
+
+            // Change the button text and style for the last step
+            if (nextStepIndex === steps.length - 1) {
+                nextStepBtn.classList.remove('bg-marine-blue');
+                nextStepBtn.classList.add('bg-purplish-blue');
+                nextStepBtn.textContent = "Confirm";
+            } else {
+                nextStepBtn.classList.add('bg-marine-blue');
+                nextStepBtn.classList.remove('bg-purplish-blue');
+                nextStepBtn.textContent = "Next Step";
+            }
         }
-  }else{
-  steps[currentStepIndex].classList.add('hidden');
-  footer.classList.add("hidden");
-  thankYouCard.classList.remove('hidden');
-  }
-
-});
-
-
-goBackBtn.addEventListener('click',()=>{
-    let currentStepIndex = steps.findIndex(step => !step.classList.contains("hidden"));
-    let currentStep = steps[currentStepIndex];
-    
-    stepsIndicator[currentStepIndex].classList.add('bg-light-blue');
-    stepsIndicator[currentStepIndex].classList.remove('text-white', 'border', 'border-white');
-     
-    if(currentStepIndex>0){
+    } else {
+        // Handle final step - Show the Thank You card and hide the footer
         currentStep.classList.add('hidden');
-        steps[currentStepIndex-1].classList.remove("hidden");
+        footer.classList.add('hidden');
+        thankYouCard.classList.remove('hidden');
     }
 });
+
+// Add event listener for the Go Back button
+goBackBtn.addEventListener('click', () => {
+    const currentStepIndex = steps.findIndex(step => !step.classList.contains("hidden"));
+    const currentStep = steps[currentStepIndex];
+    const isFirstStep = currentStepIndex === 0;
+
+    if (!isFirstStep) {
+        // Hide current step
+        footerContent.classList.remove("justify-end");
+        footerContent.classList.add("justify-between");
+        
+        currentStep.classList.add('hidden');
+        // Show the previous step
+        const previousStepIndex = currentStepIndex - 1;
+        steps[previousStepIndex].classList.remove('hidden');
+
+        // Update the step indicator
+        stepsIndicator[currentStepIndex].classList.remove('bg-light-blue');
+        stepsIndicator[currentStepIndex].classList.add('text-white', 'border', 'border-white');
+        stepsIndicator[previousStepIndex].classList.add('bg-light-blue');
+        stepsIndicator[previousStepIndex].classList.remove('text-white', 'border', 'border-white');
+    }
+
+    // Hide the Go Back button on the first step
+    if (currentStepIndex - 1 === 0) {
+        goBackBtn.classList.add('hidden');
+        footerContent.classList.add("justify-end");
+        footerContent.classList.remove("justify-between");
+    }
+
+    // Revert the Next Step button to its default state
+    if (currentStepIndex === steps.length - 1) {
+        nextStepBtn.classList.add('bg-marine-blue');
+        nextStepBtn.classList.remove('bg-purplish-blue');
+        nextStepBtn.textContent = "Next Step";
+    }
+});
+
+
 
 planSelector(stepTwo);
 
