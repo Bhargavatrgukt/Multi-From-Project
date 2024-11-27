@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        sm: '370px', // custom sm breakpoint at 370px
+        'sm': '376px',
       },
       colors: {
         'marine-blue': 'hsl(213, 96%, 18%)',
@@ -26,10 +26,7 @@ module.exports = {
       },
       backgroundImage: {
         "sidebar-desktop": "url('./assets/images/bg-sidebar-mobile.svg')", // Corrected path with '/'
-        "sidebar-mobile":  "url('./assets//images//bg-sidebar-mobile.svg')",  // Corrected path with '/'
-      },
-      screens: {
-        'max-xs': { min: '376px' }, 
+        "sidebar-mobile": "url('./assets/images/bg-sidebar-mobile.svg')",  // Corrected path with '/'
       },
     },
   },

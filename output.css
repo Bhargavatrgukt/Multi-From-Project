@@ -610,10 +610,6 @@ video {
   margin-left: 0.75rem;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -799,7 +795,7 @@ video {
 }
 
 .bg-sidebar-mobile {
-  background-image: url('./assets//images//bg-sidebar-mobile.svg');
+  background-image: url('./assets/images/bg-sidebar-mobile.svg');
 }
 
 .p-2 {
@@ -970,8 +966,22 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@media not all and (min-width: 376px) {
+  .max-sm\:block {
+    display: block;
+  }
+
+  .max-sm\:hidden {
+    display: none;
+  }
+}
+
 @media (min-width: 376px) {
-  .max-xs\:hidden {
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:hidden {
     display: none;
   }
 }
