@@ -17,8 +17,9 @@
 }  
 
 .card{
-    @apply bg-white w-80 h-fit rounded-xl p-4 absolute sm:static top-24;
+    @apply bg-white  h-fit rounded-xl p-4 absolute sm:static top-24;
 }
+
 
 .large-main{
     @apply sm:w-screen sm:h-screen sm:bg-magnolia  sm:flex sm:justify-center sm:items-center;
