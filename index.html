@@ -22,175 +22,210 @@
     </style>
   </head>
   <body>
-    <main class="w-full sm:hidden">
-      <div class="w-full  bg-sidebar-mobile h-40 p-6 relative">
-          <div class="flex  flex-row justify-center">
-            <div class="w-8 h-8 p-3 bg-light-blue rounded-full m-4 text-center flex justify-center items-center" id="step-1-indicator">1</div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-2-indicator">
-              2
-            </div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-3-indicator">
-              3
-            </div>
-            <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-4-indicator">
-              4
-            </div>
-          </div>
-      </div>
-      <div class="bg-magnolia h-screen flex justify-center p-3">
-          <div class="card" id="step-1">
-              <h1 class="font-bold text-xl p-2">Personal Info</h1>
-              <p class="text-cool-gray  p-2">Please provide your name, email address , and phone number</p>
-              <div>
-                <!-- First Input Field -->
-                <div class="common-class">
-                  <div class="label-err-css">  
-                    <label for="name" class="block">Name</label>
-                    <p id="name-error-msg" class="text-red-500 hidden" >This Field is required</p>
-                  </div>
-                  <input type="text" placeholder="e.g. Stephen King" class="p-2 border-2 border-light-gray block w-full" id="name">
-                </div>
-              
-                <!-- Second Input Field -->
-                <div class="common-class">
-                  <div class="label-err-css"> 
-                    <label for="email" class="block">Email Address</label>
-                    <p id="email-error-msg" class="text-red-500 hidden">This Field is required</p>
-                  </div>
-                  <input type="email" placeholder="e.g. stephenking@lorem.com" class="p-2 border-2 border-light-gray block w-full" id="email">
-                </div>
-              
-                <!-- Third Input Field -->
-                <div class="common-class">
-                  <div class="label-err-css">
-                    <label for="phone" class="block">Phone Number</label>
-                    <p id="phone-error-msg" class="text-red-500 hidden">This Field is required</p>
-                  </div>
-                  <input type="tel" placeholder="e.g. +1 234 567 890" class="p-2 border-2 border-light-gray block w-full" id="phone">
-                </div>
+    <main class="w-full large-main">
+      <div class="sm:bg-white flex flex-col sm:flex-row sm:gap-4 gap-0 rounded-md w-full max-w-4xl ">  
+        <div class="relative flex justify-center">
+            <img src="./assets/images/bg-sidebar-desktop.svg" alt="Desktop Sidebar"
+                class="hidden md:block w-full md:p-6">
+            <img src="./assets/images/bg-sidebar-mobile.svg" alt="Mobile Sidebar"
+                class="md:hidden w-full object-contain">
 
-              </div>
-              
-          </div>
-          <div class="card hidden" id="step-2">
-            <h1 class="font-bold text-xl p-2">Select your plan</h1>
-            <p class="text-cool-gray font-light p-2">You have the option of monthly or yearly billing</p>
-            <div class="m-1">
-              <!-- Arcade Plan -->
-              <div class="p-3 w-full flex border-2 rounded-lg mb-2 selected-plan" id="arcade" data-plan="Arcade" data-price-monthly="9" data-price-yearly="90">
-                <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
-                <div class="pl-3">
-                  <h2 class="text-marine-blue font-semibold">Arcade</h2>
-                  <p class="price text-cool-gray">$9/mo</p>
-                  <p class="offer hidden text-marine-blue">2 months free</p>
+            <div class="absolute top-4 md:top-16 flex justify-center md:flex-col flex-row md:items-start   md:mx-0 md:px-16">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 p-3 bg-light-blue rounded-full m-4 text-center flex justify-center items-center" id="step-1-indicator">1</div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 1</p>
+                        <h1 class="text-white font-bold hidden md:block">YOUR INFO</h1>
+                    </div>
+                </div>
+                <!-- Other steps -->
+                <div class="flex items-center">
+                  <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-2-indicator">
+                    2
+                  </div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 2</p>
+                        <h1 class="text-white font-bold">SELECT PLAN</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-3-indicator">
+                    3
+                  </div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 3</p>
+                        <h1 class="text-white font-bold">ADD-ONS</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 p-3 bg-transparent rounded-full m-4 text-center flex justify-center items-center text-white border border-white" id="step-4-indicator">
+                    4
+                  </div>
+                    <div class="hidden md:block ml-4 text-left">
+                        <p class="text-gray-500 font-semibold">STEP 4</p>
+                        <h1 class="text-white font-bold">SUMMARY</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <div class="bg-magnolia h-screen flex justify-center p-3 sm:bg-white sm:h-fit sm:p-5">
+            <div class="card" id="step-1">
+                <h1 class="font-bold text-xl p-2">Personal Info</h1>
+                <p class="text-cool-gray  p-2">Please provide your name, email address , and phone number</p>
+                <div>
+                  <!-- First Input Field -->
+                  <div class="common-class">
+                    <div class="label-err-css">  
+                      <label for="name" class="block">Name</label>
+                      <p id="name-error-msg" class="text-red-500 hidden" >This Field is required</p>
+                    </div>
+                    <input type="text" placeholder="e.g. Stephen King" class="p-2 border-2 border-light-gray block w-full" id="name">
+                  </div>
+                
+                  <!-- Second Input Field -->
+                  <div class="common-class">
+                    <div class="label-err-css"> 
+                      <label for="email" class="block">Email Address</label>
+                      <p id="email-error-msg" class="text-red-500 hidden">This Field is required</p>
+                    </div>
+                    <input type="email" placeholder="e.g. stephenking@lorem.com" class="p-2 border-2 border-light-gray block w-full" id="email">
+                  </div>
+                
+                  <!-- Third Input Field -->
+                  <div class="common-class">
+                    <div class="label-err-css">
+                      <label for="phone" class="block">Phone Number</label>
+                      <p id="phone-error-msg" class="text-red-500 hidden">This Field is required</p>
+                    </div>
+                    <input type="tel" placeholder="e.g. +1 234 567 890" class="p-2 border-2 border-light-gray block w-full" id="phone">
+                  </div>
+
+                </div>
+                
+            </div>
+            <div class="card hidden" id="step-2">
+              <h1 class="font-bold text-xl p-2">Select your plan</h1>
+              <p class="text-cool-gray font-light p-2">You have the option of monthly or yearly billing</p>
+              <div class="m-1">
+                <!-- Arcade Plan -->
+                <div class="p-3 w-full flex border-2 rounded-lg mb-2 selected-plan" id="arcade" data-plan="Arcade" data-price-monthly="9" data-price-yearly="90">
+                  <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
+                  <div class="pl-3">
+                    <h2 class="text-marine-blue font-semibold">Arcade</h2>
+                    <p class="price text-cool-gray">$9/mo</p>
+                    <p class="offer hidden text-marine-blue">2 months free</p>
+                  </div>
+                </div>
+                <!-- Advanced Plan -->
+                <div class="p-3 w-full flex border-2 rounded-lg mb-2" id="advanced" data-plan="Advanced" data-price-monthly="12" data-price-yearly="120">
+                  <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
+                  <div class="pl-3">
+                    <h2 class="text-marine-blue font-semibold">Advanced</h2>
+                    <p class="price text-cool-gray">$12/mo</p>
+                    <p class="offer hidden text-marine-blue">2 months free</p>
+                  </div>
+                </div>
+                <!-- Pro Plan -->
+                <div class="p-3 w-full flex border-2 rounded-lg mb-2" id="pro" data-plan="Pro" data-price-monthly="14" data-price-yearly="150">
+                  <img src="./assets/images/icon-pro.svg" alt="icon-pro">
+                  <div class="pl-3">
+                    <h2 class="text-marine-blue font-semibold">Pro</h2>
+                    <p class="price text-cool-gray">$14/mo</p>
+                    <p class="offer hidden text-marine-blue">2 months free</p>
+                  </div>
                 </div>
               </div>
-              <!-- Advanced Plan -->
-              <div class="p-3 w-full flex border-2 rounded-lg mb-2" id="advanced" data-plan="Advanced" data-price-monthly="12" data-price-yearly="120">
-                <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
-                <div class="pl-3">
-                  <h2 class="text-marine-blue font-semibold">Advanced</h2>
-                  <p class="price text-cool-gray">$12/mo</p>
-                  <p class="offer hidden text-marine-blue">2 months free</p>
-                </div>
-              </div>
-              <!-- Pro Plan -->
-              <div class="p-3 w-full flex border-2 rounded-lg mb-2" id="pro" data-plan="Pro" data-price-monthly="14" data-price-yearly="150">
-                <img src="./assets/images/icon-pro.svg" alt="icon-pro">
-                <div class="pl-3">
-                  <h2 class="text-marine-blue font-semibold">Pro</h2>
-                  <p class="price text-cool-gray">$14/mo</p>
-                  <p class="offer hidden text-marine-blue">2 months free</p>
-                </div>
+              <div class="flex justify-center w-full bg-magnolia p-4 mt-4 rounded-lg">
+                <!-- Monthly Label -->
+                <p class="text-md font-medium pr-4 text-marine-blue">Monthly</p>
+                <!-- Checkbox Slider -->
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="billing-toggle" class="sr-only peer">
+                  <div class="w-10 h-5 bg-gray-200 rounded-full peer dark:bg-gray-700"></div>
+                  <div class="absolute w-4 h-4 bg-white border border-gray-300 rounded-full transition-transform peer-checked:translate-x-6"></div>
+                </label>
+                <!-- Yearly Label -->
+                <p class="text-md font-medium pl-4">Yearly</p>
               </div>
             </div>
-            <div class="flex justify-center w-full bg-magnolia p-4 mt-4 rounded-lg">
-              <!-- Monthly Label -->
-              <p class="text-md font-medium pr-4 text-marine-blue">Monthly</p>
-              <!-- Checkbox Slider -->
-              <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" id="billing-toggle" class="sr-only peer">
-                <div class="w-10 h-5 bg-gray-200 rounded-full peer dark:bg-gray-700"></div>
-                <div class="absolute w-4 h-4 bg-white border border-gray-300 rounded-full transition-transform peer-checked:translate-x-6"></div>
-              </label>
-              <!-- Yearly Label -->
-              <p class="text-md font-medium pl-4">Yearly</p>
+            
+          <div class="card hidden" id="step-3">
+            <h1 class="font-bold text-xl p-2">Pick add-ons</h1>
+            <p class="text-cool-gray font-light p-2">Add-ons helps enhance gaming experience</p>
+            <div class="mt-1 mb-3">
+              <div class="flex w-full p-3 border-2 rounded-lg justify-between">
+                  <input type="checkbox" class="bg-marine-blue text-white mr-3" checked/>
+                  <div>
+                    <h3 class="text-sm font-bold text-marine-blue">Online Services</h3>
+                    <p class="text-gray-400 text-xs">Access to multiplayer games</p>
+                  </div>
+                  <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="1" data-price-yearly="10">+$1/mo</p>
+              </div>
             </div>
-          </div>
-          
-         <div class="card hidden" id="step-3">
-          <h1 class="font-bold text-xl p-2">Pick add-ons</h1>
-          <p class="text-cool-gray font-light p-2">Add-ons helps enhance gaming experience</p>
-          <div class="mt-1 mb-3">
-             <div class="flex w-full p-3 border-2 rounded-lg justify-between">
+            <div class="mt-1 mb-3">
+              <div class="flex w-full p-3 border-2 rounded-lg justify-between">
                 <input type="checkbox" class="bg-marine-blue text-white mr-3" checked/>
                 <div>
-                   <h3 class="text-sm font-bold text-marine-blue">Online Services</h3>
-                   <p class="text-gray-400 text-xs">Access to multiplayer games</p>
+                    <h3 class="text-sm font-bold text-marine-blue">Larger Storage</h3>
+                    <p class="text-gray-400 text-xs">Extra 1TB of cloud save</p>
                 </div>
-                <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="1" data-price-yearly="10">+$1/mo</p>
-             </div>
+                <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="2" data-price-yearly="20">+$2/mo</p>
+              </div>
           </div>
           <div class="mt-1 mb-3">
             <div class="flex w-full p-3 border-2 rounded-lg justify-between">
-               <input type="checkbox" class="bg-marine-blue text-white mr-3" checked/>
-               <div>
-                  <h3 class="text-sm font-bold text-marine-blue">Larger Storage</h3>
-                  <p class="text-gray-400 text-xs">Extra 1TB of cloud save</p>
-               </div>
-               <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="2" data-price-yearly="20">+$2/mo</p>
-            </div>
-         </div>
-         <div class="mt-1 mb-3">
-          <div class="flex w-full p-3 border-2 rounded-lg justify-between">
-             <input type="checkbox" class="bg-marine-blue text-white mr-3"/>
-             <div>
-                <h3 class="text-sm font-bold text-marine-blue">Customizable Profile</h3>
-                <p class="text-gray-400 text-xs">Custom theme on your profile</p>
-             </div>
-             <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="2" data-price-yearly="20">+$2/mo</p>
-          </div>
-         </div>
-          
-         </div>
-         
-         <div class="card hidden" id="step-4">
-          <h1 class="font-bold text-2xl p-2">Finishing Up</h1>
-          <p class="text-cool-gray font-light p-2">Double-check everything looks OK before confirming</p>
-          <div class="bg-magnolia p-5" id="summary">
-              <div class="flex justify-between pt-3 pb-3">
-                  <div>
-                    <h2 class="text-marine-blue text-sm" id="plan-name">Arcade(monthly)</h2>
-                    <a href="#" class="text-cool-gray block underline" id="change-plan">change</a>
-                  </div>
-                  <p id="plan-price">$9/mo</p>
+              <input type="checkbox" class="bg-marine-blue text-white mr-3"/>
+              <div>
+                  <h3 class="text-sm font-bold text-marine-blue">Customizable Profile</h3>
+                  <p class="text-gray-400 text-xs">Custom theme on your profile</p>
               </div>
-              <hr class="bg-light-gray  w-full">
-          </div>
-            <div class="flex flex-row justify-between  p-3 ml-3">
-               <h2 class="text-base text-cool-gray" id="total">Total(per monthly)</h2>
-               <h2 class="text-marine-blue text-lg font-bold" id="total-cal">$</h2>
+              <p class="text-marine-blue text-sm ml-3 align-middle mt-2" data-price-monthly="2" data-price-yearly="20">+$2/mo</p>
             </div>
-         </div>
-
-          <div class="card hidden" id="thank-you-card">
-            <div class="flex flex-col items-center">
-              <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" class="mt-2 mb-6">
-              <h1 class="text-marine-blue font-bold text-xl mb-4">Thank You!</h1>
-              <p class="text-center text-cool-gray font-semibold">
-                Thanks for confirming your subscription! 
-                  We hope you have fun using our platform. If you ever need support, 
-                  please feel free to email us at support@loremgaming.com.
-              </p>
-            </div>  
           </div>
-      </div>  
-        <div class="fixed bottom-0 w-full bg-white p-4" id="footer">
-          <div class="flex justify-end" id="footer-content">
-            <a id="go-back-btn" class="text-cool-gray hidden inline-block pt-2">Go Back</a>
-            <button class="bg-marine-blue text-white p-2 rounded-md" id="next-step-btn">Next Step</button>
+            
+          </div>
+          
+          <div class="card hidden" id="step-4">
+            <h1 class="font-bold text-2xl p-2">Finishing Up</h1>
+            <p class="text-cool-gray font-light p-2">Double-check everything looks OK before confirming</p>
+            <div class="bg-magnolia p-5" id="summary">
+                <div class="flex justify-between pt-3 pb-3">
+                    <div>
+                      <h2 class="text-marine-blue text-sm" id="plan-name">Arcade(monthly)</h2>
+                      <a href="#" class="text-cool-gray block underline" id="change-plan">change</a>
+                    </div>
+                    <p id="plan-price">$9/mo</p>
+                </div>
+                <hr class="bg-light-gray  w-full">
+            </div>
+              <div class="flex flex-row justify-between  p-3 ml-3">
+                <h2 class="text-base text-cool-gray" id="total">Total(per monthly)</h2>
+                <h2 class="text-marine-blue text-lg font-bold" id="total-cal">$</h2>
+              </div>
+          </div>
+
+            <div class="card hidden" id="thank-you-card">
+              <div class="flex flex-col items-center">
+                <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" class="mt-2 mb-6">
+                <h1 class="text-marine-blue font-bold text-xl mb-4">Thank You!</h1>
+                <p class="text-center text-cool-gray font-semibold">
+                  Thanks for confirming your subscription! 
+                    We hope you have fun using our platform. If you ever need support, 
+                    please feel free to email us at support@loremgaming.com.
+                </p>
+              </div>  
+            </div>
+        </div> 
+          <div class="fixed sm:static sm:bg-transparent  bottom-0 w-full sm:w-full bg-white p-4" id="footer">
+            <div class="flex justify-end" id="footer-content">
+              <a id="go-back-btn" class="text-cool-gray hidden inline-block pt-2">Go Back</a>
+              <button class="bg-marine-blue text-white p-2 rounded-md" id="next-step-btn">Next Step</button>
+            </div>
           </div>
         </div>
+      </div>  
+          
     </main>
     <script src="./index.js"></script>
   </body>

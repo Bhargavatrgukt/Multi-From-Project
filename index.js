@@ -242,6 +242,7 @@ function planSelector(planCard) {
     billingToggle.addEventListener('change', () => {
         updatePrices();
         addOnsSelector(stepThree);
+        summation()
     });
 
     // Initialize the default plan on page load

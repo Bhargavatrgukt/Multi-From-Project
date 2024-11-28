@@ -3,9 +3,6 @@ module.exports = {
   content: ["./index.html", "./index.js"],
   theme: {
     extend: {
-      screens: {
-        'sm': '376px',
-      },
       colors: {
         'marine-blue': 'hsl(213, 96%, 18%)',
         'purplish-blue': 'hsl(243, 100%, 62%)',
@@ -25,8 +22,8 @@ module.exports = {
         'body': '16px',
       },
       backgroundImage: {
-        "sidebar-desktop": "url('./assets/images/bg-sidebar-mobile.svg')", // Corrected path with '/'
-        "sidebar-mobile": "url('./assets/images/bg-sidebar-mobile.svg')",  // Corrected path with '/'
+       "sidebar-desktop": "url('./assets/images/bg-sidebar-desktop.svg')", 
+        "sidebar-mobile": "url('./assets/images/bg-sidebar-mobile.svg')",  
       },
     },
   },
