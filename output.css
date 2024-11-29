@@ -694,10 +694,6 @@ video {
   max-width: 56rem;
 }
 
-.flex-1 {
-  flex: 1 1 0%;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -840,10 +836,6 @@ video {
   padding: 1.25rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -887,11 +879,6 @@ video {
 
 .align-middle {
   vertical-align: middle;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-base {
@@ -1016,6 +1003,16 @@ body{
   }
 }
 
+.card-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: hsl(217 100% 97% / var(--tw-bg-opacity, 1));
+  padding: 0.75rem;
+}
+
 .hover\:text-marine-blue:hover {
   --tw-text-opacity: 1;
   color: hsl(213 96% 18% / var(--tw-text-opacity, 1));
@@ -1039,6 +1036,14 @@ body{
     margin: 1.25rem;
   }
 
+  .sm\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .sm\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .sm\:mr-5 {
     margin-right: 1.25rem;
   }
@@ -1047,28 +1052,12 @@ body{
     margin-right: 2rem;
   }
 
-  .sm\:mt-8 {
-    margin-top: 2rem;
-  }
-
-  .sm\:ml-4 {
-    margin-left: 1rem;
-  }
-
-  .sm\:mb-10 {
-    margin-bottom: 2.5rem;
-  }
-
-  .sm\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
-  .sm\:mt-auto {
-    margin-top: auto;
-  }
-
   .sm\:mt-32 {
     margin-top: 8rem;
+  }
+
+  .sm\:mt-8 {
+    margin-top: 2rem;
   }
 
   .sm\:block {
@@ -1096,6 +1085,10 @@ body{
     width: 2.5rem;
   }
 
+  .sm\:w-16 {
+    width: 4rem;
+  }
+
   .sm\:w-36 {
     width: 9rem;
   }
@@ -1106,10 +1099,6 @@ body{
 
   .sm\:w-full {
     width: 100%;
-  }
-
-  .sm\:w-16 {
-    width: 4rem;
   }
 
   .sm\:flex-shrink-0 {
@@ -1162,17 +1151,14 @@ body{
     padding-top: 0.75rem;
   }
 
-  .sm\:pl-3 {
-    padding-left: 0.75rem;
-  }
-
-  .sm\:pl-4 {
-    padding-left: 1rem;
-  }
-
   .sm\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .sm\:text-base {
@@ -1183,11 +1169,6 @@ body{
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 }
 

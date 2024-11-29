@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 
-    body{
-        margin: 0px;
+body{
+     margin: 0px;
     }
 
 
@@ -23,4 +23,8 @@
 
 .large-main{
     @apply sm:w-screen sm:h-screen sm:bg-magnolia  sm:flex sm:justify-center sm:items-center;
+}
+
+.card-container{
+    @apply bg-magnolia h-screen flex justify-center items-center p-3;
 }
